@@ -14,7 +14,7 @@ Features
 Dependencies
 ------------
 
-- Apache must have R+W access to the storage.json file.
+- Apache must have R+W access to your storage.json file.
 
 Reference
 ---------
@@ -58,22 +58,40 @@ Reference
 Usage
 -----
 
-1. Move the storage folder into your web area.
-2. Link the class into your existing project.
+1.  Install [composer](https://getcomposer.org/) if you haven't already.
+2.  Add this library to your project's composer.json file.
 
-	```
-	require_once "storage/simple_storage.class.php";
-	```
+    ```
+    {
+        "require": {
+            "mattcolf/simple-storage": "*"
+        }
+    }
+    ```
 
-3. Create an instance of the class.
+3.  Install all dependencies for your project.
 
-	```
-	$storage = new SimpleStorage();
-	\\ or
-	$storage = new SimpleStorage("YOUR_DOMAIN_NAME");
-	```
+    ```
+    > composer.phar install
+    ```
 
-4. Put and get content as needed. Note that the storage key must be a string!.
+4.  Within your project, make sure to load the composer autoloader.
+
+    ```
+    require_once "vendor/autoload.php";
+    ```
+
+5.  Set your storage file location and instantiate a copy of SimpleStorage.
+
+    ```
+    use MC\SimpleStorage;
+
+    $file = '/path/to/storage.json';
+
+    $storage = new SimpleStorage($file);
+    ```
+
+6. Put and get content as needed. Note that the storage key must be a string!.
 
 	```
 	$book = array(														
@@ -101,7 +119,7 @@ Usage
 Legal
 -----
 
-Copyright 2011 Matthew Colf mattcolf@mattcolf.com
+Copyright 2014 Matthew Colf mattcolf@mattcolf.com
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
