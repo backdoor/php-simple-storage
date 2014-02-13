@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+./bin/composer.phar validate
+./bin/composer.phar self-update
+./bin/composer.phar update

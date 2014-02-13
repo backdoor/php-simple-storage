@@ -1,0 +1,26 @@
+{
+    "name":         "mattcolf/simple-storage",
+    "description":  "Very simple flat file JSON storage system.",
+    "type":         "library",
+    "license":      "Apache-2.0",
+    "authors": [
+        {
+            "name":         "Matt Colf",
+            "email":        "mattcolf@mattcolf.com",
+            "homepage":     "http://mattcolf.com"
+        }
+    ],
+    "require": {
+        "php":                          "~5.3"
+    },
+    "require-dev": {
+        "phpmd/phpmd":                  "*",
+        "phpunit/phpunit":              "~3.7",
+        "squizlabs/php_codesniffer":    "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "MC\\": ["src/", "tests/"]
+        }
+    }
+}

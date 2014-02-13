@@ -9,6 +9,7 @@ Features
 
 - Provides a key:value storage system. Supports most PHP objects including multidimensional arrays.
 - Ability to divide data into domains.
+- Updated to support installation with composer in 2.0.
 
 Dependencies
 ------------
@@ -18,33 +19,41 @@ Dependencies
 Reference
 ---------
 
-- 	SimpleStorage::__construct($your_default_domain = "default")
+- 	SimpleStorage::__construct($file, $your_default_domain = "default")
 
-	Throws an ```exception()``` upon error.
+	Throws ```Exception``` on error.
 
 - 	SimpleStorage::flush()
 
-	Writes all stored data back to file. Throws an ```exception()``` on error.
+	Writes all stored data back to file. Throws ```Exception``` on error.
 
-- 	SimpleStorage::put($key,$data,$domain = "YOUR_DEFAULT_DOMAIN")
+- 	SimpleStorage::put($key, $data, $domain = YOUR_DEFAULT_DOMAIN)
 
 	Stores new data under your selected domain (must already be created) that can later be referenced by ```$key```.
 
-- 	SimpleStorage::get($key,$domain = "YOUR_DEFAULT_DOMAIN")
+-   SimpleStorage::exists($key, $domain = YOUR_DEFAULT_DOMAIN)
+
+    Check if a key exists within a given domain, your default domain by default.
+
+-   SimpleStorage::remove($key, $domain = YOUR_DEFAULT_DOMAIN)
+
+    Remove a key, resident in the specified domain, from storage
+
+- 	SimpleStorage::get($key, $domain = YOUR_DEFAULT_DOMAIN)
 
 	Retrieves data you have already stored within ```$domain```.
 	
 - 	SimpleStorage::domain_exists($domain)
 
-	Check to see if a domain exists. Returns ```TRUE``` or ```FALSE```.
+	Check to see if a domain exists.
 	
 - 	SimpleStorage::domain_add($domain)
 
-	Adds a new domain. Returns ```FALSE`` on error.
+	Adds a new domain. Returns ```false`` on error.
 
 - 	SimpleStorage::domain_remove($domain)
 
-	Remove an existing domain and delete all associated data. Returns ```FALSE``` on error.
+	Remove an existing domain and delete all associated data. Returns ```false``` on error.
 
 Usage
 -----

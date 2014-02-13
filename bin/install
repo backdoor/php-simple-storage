@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+./bin/composer.phar self-update
+./bin/composer.phar install
